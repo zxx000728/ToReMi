@@ -1,0 +1,12 @@
+torch
+numpy
+datasets
+transformers
+scikit-learn
+nltk
+ollama
+FlagEmbedding
+wandb
+accelerate
+evaluate
+tqdm
