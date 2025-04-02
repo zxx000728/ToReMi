@@ -34,16 +34,19 @@ pip install -r requirements.txt
 
 ### 2. Data Preparation
 ```bash
-# Step 1: Sample Dolma data
-python3 dolma/sample_data.py \
+# Step 1: Download and Sample Dolma data
+cd dolma
+python3 download_dolma.py
+
+python3 sample_data.py \
   --dolma_dir /path/to/original_dolma \
-  --save_dir /path/to/save_samples \
+  --save_dir /path/to/sample_data \
   --tokenizer_name gpt2 \
   --sampling_ratios "books:0.002,code:0.138,ref:0.025,web:0.835"
 
 # Step 2: Add topic labels
 python3 topic_annotation/1_clustering.py \
-  --corpora_dir /path/to/sample_data/data_30B \
+  --corpora_dir /path/to/sample_data \
   --save_embedding_dir /path/to/embeddings \
   --save_cluster_dir /path/to/clustered_data \
   --fp16
